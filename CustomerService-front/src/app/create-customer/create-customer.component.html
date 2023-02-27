@@ -1,0 +1,34 @@
+<form  [formGroup]="createForm"  (ngSubmit)="submit()">
+
+  <label for="firstName">First Name: </label>
+  <input id="firstName" name="firstName"  type="text" formControlName='firstName' placeholder="Your first name.."><br>
+
+  <label for="lastName">Last Name: </label>
+  <input id="lastName" name="lastName" type="text"  formControlName='lastName' placeholder="Your last name.."><br>
+
+  <label for="emailId">Email Id: </label>
+  <input id="emailId" name="emailId" type="text"  formControlName='emailId' placeholder="Your email id.."><br>
+
+  <div formGroupName="address">
+
+  <label for="addressLine1">AddressLine1: </label>
+  <input id="addressLine1" name="addressLine1" type="text"  class="form-control" formControlName='addressLine1' placeholder="Your address line1.."><br>
+
+  <label for="addressLine2">AddressLine2: </label>
+  <input id="addressLine2" name="addressLine2"  formControlName='addressLine2'  class="form-control" type="text"  placeholder="Your address line2.."><br>
+
+  <label for="city">City: </label>
+  <input id="city" name="city" type="text" formControlName='city'  class="form-control" placeholder="Your city.."><br>
+
+  <label for="state">State: </label>
+  <input id="state" name="state" type="text" formControlName='state'  class="form-control" placeholder="Your state.."><br>
+
+  <label for="zipCode">Zip Code: </label>
+  <input id="zipCode" name="zipCode" type="text" formControlName='zipCode'  class="form-control" placeholder="Your zip code.."><br>
+  </div>
+  <label for="phoneNumber">Phone Number: </label>
+  <input id="phoneNumber" name="phoneNumber" type="text" formControlName='phoneNumber'  placeholder="Your phone number.."><br>
+
+  <button type="submit" value="submit">Submit</button>
+</form>
+

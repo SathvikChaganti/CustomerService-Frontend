@@ -1,0 +1,36 @@
+ <table>
+      <thead>
+      <tr>
+<!--        <th scope="col">#</th>-->
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Address Line1</th>
+        <th scope="col">Address Line2</th>
+        <th scope="col">City</th>
+        <th scope="col">Zip Code</th>
+        <th scope="col">State</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Billing Account Number</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customers">
+<!--        <td>{{ customer.id }}</td>-->
+        <td>{{ customer.firstName }}</td>
+        <td>{{ customer.lastName }}</td>
+        <td>{{ customer.address?.addressLine1 }}</td>
+        <td>{{ customer.address?.addressLine2 }}</td>
+        <td>{{ customer.address?.city }}</td>
+        <td>{{ customer.address?.zipCode }}</td>
+        <td>{{ customer.address?.state }}</td>
+        <td><a href="mailto:{{ customer.emailId }}">{{ customer.emailId }}</a></td>
+        <td>{{ customer.phoneNumber }}</td>
+        <td>{{ customer.billingAccountNumber }}</td>
+        <td><button type="update" routerLink="/update/{{customer.billingAccountNumber}}" (click)="updateCustomer(customer.billingAccountNumber)">Update</button></td>
+        <td><button type="delete" (click)="deleteCustomer(customer.billingAccountNumber)">Delete</button></td>
+      </tr>
+      </tbody>
+    </table>
